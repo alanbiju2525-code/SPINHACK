@@ -305,3 +305,75 @@
     });
   });
 })();
+
+/* ============================================================
+   10. LIVE HIVE STATUS (WEATHER API)
+   ============================================================ */
+
+(function initHiveStatus() {
+  const city = document.getElementById("city");
+  const temp = document.getElementById("temp");
+  const humidity = document.getElementById("humidity");
+  const crop = document.getElementById("crop");
+  const solar = document.getElementById("solar");
+
+  if (!navigator.geolocation) {
+    city.textContent = "Geolocation not supported";
+    return;
+  }
+
+  navigator.geolocation.getCurrentPosition(async (position) => {
+    const lat = position.coords.latitude;
+    const lon = position.coords.longitude;
+
+    try {
+      // Weather
+      const weatherRes = await fetch(
+        `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,relative_humidity_2m`,
+      );
+
+      const weather = await weatherRes.json();
+
+      const temperature = weather.current.temperature_2m;
+      const hum = weather.current.relative_humidity_2m;
+
+      temp.textContent = `${temperature}°C`;
+      humidity.textContent = `${hum}%`;
+
+      // City Name
+      const geoRes = await fetch(
+        `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`,
+      );
+
+      const geo = await geoRes.json();
+
+      city.textContent =
+        geo.address.city ||
+        geo.address.town ||
+        geo.address.village ||
+        "Unknown";
+
+      // Recommendation
+
+      if (temperature > 30 && hum > 70) {
+        crop.textContent = "🍓 Strawberries";
+      } else if (temperature > 24) {
+        crop.textContent = "🌿 Basil";
+      } else {
+        crop.textContent = "🥬 Lettuce";
+      }
+
+      if (temperature > 30) {
+        solar.textContent = "Excellent";
+      } else if (temperature > 24) {
+        solar.textContent = "Good";
+      } else {
+        solar.textContent = "Moderate";
+      }
+    } catch (err) {
+      console.error(err);
+
+      city.textContent = "API Error";
+    }
+  });
+})();

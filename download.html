@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Download App | Colgate Hive</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Inter, Arial, sans-serif;
+      }
+
+      body {
+        background: radial-gradient(circle at top, #0b2414, #010805 75%);
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      body::before {
+        content: "";
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        background: #4dff7a;
+        border-radius: 50%;
+        filter: blur(170px);
+        opacity: 0.12;
+      }
+
+      .container {
+        text-align: center;
+        max-width: 700px;
+        position: relative;
+      }
+
+      .small {
+        letter-spacing: 4px;
+        font-size: 0.85rem;
+        color: #67ff88;
+        margin-bottom: 18px;
+      }
+
+      h1 {
+        font-size: 5rem;
+        margin-bottom: 20px;
+      }
+
+      span {
+        color: #67ff88;
+      }
+
+      p {
+        font-size: 1.15rem;
+        line-height: 1.8;
+        color: #b8b8b8;
+      }
+
+      .progress {
+        margin: 45px auto;
+        width: 360px;
+        height: 10px;
+        background: #16311d;
+        border-radius: 30px;
+        overflow: hidden;
+      }
+
+      .fill {
+        height: 100%;
+        width: 62%;
+        background: #5cff75;
+        animation: grow 2s ease infinite alternate;
+      }
+
+      @keyframes grow {
+        from {
+          width: 58%;
+        }
+        to {
+          width: 65%;
+        }
+      }
+
+      button {
+        margin-top: 10px;
+        padding: 16px 38px;
+        border: none;
+        border-radius: 999px;
+        background: #5cff75;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      button:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 0 30px rgba(92, 255, 117, 0.35);
+      }
+
+      a {
+        display: block;
+        margin-top: 30px;
+        color: white;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="small">DOWNLOAD</div>
+
+      <h1>The App<span>.</span></h1>
+
+      <p>
+        Still growing...<br /><br />
+
+        We've finished the loading screen.<br />
+        The basil is reviewing the UI.<br />
+        The tomatoes found three bugs.
+      </p>
+
+      <div class="progress">
+        <div class="fill"></div>
+      </div>
+
+      <button
+        onclick="
+          alert(
+            'Download complete! 🌱 Nothing was actually downloaded. The basil escaped before we finished.',
+          )
+        "
+      >
+        Download Anyway
+      </button>
+
+      <a href="index.html">← Return Home</a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pre-Order | Colgate Hive</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Inter, Arial, sans-serif;
+      }
+
+      body {
+        background: radial-gradient(circle at top, #0b2414, #010805 75%);
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      body::before {
+        content: "";
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        background: #4dff7a;
+        border-radius: 50%;
+        filter: blur(170px);
+        opacity: 0.12;
+      }
+
+      .container {
+        text-align: center;
+        max-width: 750px;
+        padding: 40px;
+        position: relative;
+      }
+
+      .small {
+        color: #67ff88;
+        letter-spacing: 4px;
+        font-size: 0.85rem;
+        margin-bottom: 20px;
+      }
+
+      h1 {
+        font-size: 5rem;
+        margin-bottom: 25px;
+      }
+
+      span {
+        color: #67ff88;
+      }
+
+      p {
+        color: #b8b8b8;
+        font-size: 1.15rem;
+        line-height: 1.8;
+      }
+
+      button {
+        margin-top: 45px;
+        background: #5cff75;
+        color: #08130b;
+        border: none;
+        padding: 16px 38px;
+        border-radius: 999px;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      button:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 0 30px rgba(92, 255, 117, 0.35);
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="small">PRE-ORDER</div>
+
+      <h1>Almost<span>.</span></h1>
+
+      <p>
+        You're a little early.<br /><br />
+
+        Our strawberries are still attending orientation.<br />
+        The basil hasn't signed the paperwork.<br />
+        The tomatoes requested dental insurance.
+      </p>
+
+      <button
+        onclick="
+          alert(
+            'Congratulations! You are now #4,294,827 in line. Estimated delivery: Spring 2047 🌱',
+          )
+        "
+      >
+        Reserve My Spot
+      </button>
+
+      <br /><br />
+
+      <a href="index.html">← Return Home</a>
+    </div>
+  </body>
+</html>

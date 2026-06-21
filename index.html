@@ -8,6 +8,7 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
+
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -293,6 +294,39 @@
         </div>
       </div>
     </section>
+    <!-- LIVE HIVE STATUS -->
+    <section id="live-status">
+      <p class="section-eyebrow reveal">LIVE DATA</p>
+
+      <h2 class="section-headline reveal">Your local<br />Hive forecast.</h2>
+
+      <div class="status-card reveal">
+        <div class="status-row">
+          <span>📍 Location</span>
+          <strong id="city">Loading...</strong>
+        </div>
+
+        <div class="status-row">
+          <span>🌤 Temperature</span>
+          <strong id="temp">--°C</strong>
+        </div>
+
+        <div class="status-row">
+          <span>💧 Humidity</span>
+          <strong id="humidity">--%</strong>
+        </div>
+
+        <div class="status-row">
+          <span>🌿 Recommended Crop</span>
+          <strong id="crop">Calculating...</strong>
+        </div>
+
+        <div class="status-row">
+          <span>☀ Solar Potential</span>
+          <strong id="solar">Analyzing...</strong>
+        </div>
+      </div>
+    </section>
 
     <!-- CROPS -->
     <section id="crops">
@@ -307,7 +341,6 @@
           <div class="crop-info">
             Sweet, compact, and perfect for portable growing.
           </div>
-          <div class="crop-days">Ready in 14 days</div>
         </div>
         <div class="crop-card reveal reveal-delay-1">
           <span class="crop-emoji">🌿</span>
@@ -315,7 +348,6 @@
           <div class="crop-info">
             Aromatic herbs at peak freshness, always on hand.
           </div>
-          <div class="crop-days">Ready in 7 days</div>
         </div>
         <div class="crop-card reveal reveal-delay-2">
           <span class="crop-emoji">🥬</span>
@@ -323,7 +355,6 @@
           <div class="crop-info">
             Baby spinach, arugula, and lettuce in a compact pod.
           </div>
-          <div class="crop-days">Ready in 10 days</div>
         </div>
         <div class="crop-card reveal reveal-delay-3">
           <span class="crop-emoji">🍅</span>
@@ -331,7 +362,6 @@
           <div class="crop-info">
             Sun gold variety optimized for hydroponic growth.
           </div>
-          <div class="crop-days">Ready in 21 days</div>
         </div>
         <div class="crop-card reveal">
           <span class="crop-emoji">🌱</span>
@@ -339,7 +369,6 @@
           <div class="crop-info">
             Nutrient-dense sprouts harvested at peak potency.
           </div>
-          <div class="crop-days">Ready in 5 days</div>
         </div>
         <div class="crop-card reveal reveal-delay-1">
           <span class="crop-emoji">🫐</span>
@@ -347,13 +376,11 @@
           <div class="crop-info">
             Compact dwarf variety adapted for Hive chambers.
           </div>
-          <div class="crop-days">Ready in 18 days</div>
         </div>
         <div class="crop-card reveal reveal-delay-2">
           <span class="crop-emoji">🌶️</span>
           <div class="crop-name">Chilli Peppers</div>
           <div class="crop-info">Compact hot varieties from mild to fiery.</div>
-          <div class="crop-days">Ready in 21 days</div>
         </div>
         <div class="crop-card reveal reveal-delay-3">
           <span class="crop-emoji">🧄</span>
@@ -361,7 +388,6 @@
           <div class="crop-info">
             Regrows continuously — one pod, infinite harvests.
           </div>
-          <div class="crop-days">Ready in 8 days</div>
         </div>
       </div>
     </section>
@@ -425,8 +451,12 @@
         into a living farm. Pre-orders open now.
       </p>
       <div class="cta-actions reveal">
-        <button class="btn-primary btn-large">Pre-order — $149</button>
-        <button class="btn-ghost btn-large">Download App</button>
+        <a href="preorder.html">
+          <button class="btn-primary btn-large">Pre-order — $149</button></a
+        >
+        <a href="download.html">
+          <button class="btn-ghost btn-large">Download App</button></a
+        >
       </div>
     </section>
 
@@ -434,10 +464,10 @@
     <footer>
       <div class="footer-logo">Colgate <span>Hive</span></div>
       <ul class="footer-links">
-        <li><a href="#">Privacy</a></li>
-        <li><a href="#">Terms</a></li>
-        <li><a href="#">Press</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="terms.html">Terms</a></li>
+        <li><a href="press.html">Press</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
       <p class="footer-copy">© 2025 Colgate Hive. Your snack is alive.</p>
     </footer>

@@ -1402,3 +1402,79 @@ footer {
     transition-duration: 0.01ms !important;
   }
 }
+/* ============================================================
+   LIVE HIVE STATUS
+   ============================================================ */
+
+#live-status {
+  max-width: 1200px;
+  margin: auto;
+  padding: 140px 48px;
+  text-align: center;
+}
+
+.status-card {
+  margin: 60px auto 0;
+  max-width: 700px;
+
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(74, 255, 107, 0.12);
+
+  border-radius: 28px;
+
+  backdrop-filter: blur(25px);
+
+  overflow: hidden;
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.35),
+    0 0 50px rgba(74, 255, 107, 0.05);
+}
+
+.status-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 24px 32px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.status-row:last-child {
+  border-bottom: none;
+}
+
+.status-row span {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.status-row strong {
+  color: var(--green);
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.status-card:hover {
+  border-color: rgba(74, 255, 107, 0.25);
+}
+
+@media (max-width: 768px) {
+  .status-row {
+    padding: 18px;
+
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+#live-status .section-headline {
+  max-width: 100%;
+  text-align: center;
+  margin: 0 auto 60px;
+}
+
+#live-status .section-eyebrow {
+  text-align: center;
+  margin-bottom: 20px;
+}
