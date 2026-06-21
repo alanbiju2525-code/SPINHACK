@@ -1,291 +1,447 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Colgate Hive – Your Snack is Alive</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="style.css"/>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colgate Hive – Your Snack is Alive</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
 
-<div class="cursor" id="cursor"></div>
-<div class="cursor-ring" id="cursor-ring"></div>
+    <!-- NAV -->
+    <nav id="nav">
+      <a href="#" class="nav-logo">Colgate <span>Hive</span></a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how-wrapper">How It Works</a></li>
+        <li><a href="#crops">Crops</a></li>
+        <li><a href="#sustain">Sustainability</a></li>
+      </ul>
+      <button class="nav-cta" id="nav-cta-btn">Pre-order</button>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
 
-<!-- NAV -->
-<nav id="nav">
-  <a href="#" class="nav-logo">Colgate <span>Hive</span></a>
-  <ul class="nav-links" id="nav-links">
-    <li><a href="#features">Features</a></li>
-    <li><a href="#how-wrapper">How It Works</a></li>
-    <li><a href="#crops">Crops</a></li>
-    <li><a href="#sustain">Sustainability</a></li>
-  </ul>
-  <button class="nav-cta" id="nav-cta-btn">Pre-order</button>
-  <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-
-<!-- HERO -->
-<section id="hero">
-  <canvas id="canvas-bg"></canvas>
-  <p class="hero-eyebrow">Introducing Colgate Hive</p>
-  <h1 class="hero-headline">Your Snack<em>is Alive.</em></h1>
-  <p class="hero-sub">The world's first portable hydroponic snack ecosystem. Carry fresh strawberries, herbs, and greens — grown by AI, powered by the sun.</p>
-  <div class="hero-actions">
-    <button class="btn-primary" id="hero-preorder-btn">Pre-order Now</button>
-    <button class="btn-ghost" id="hero-learn-btn">See How It Works</button>
-  </div>
-  <div class="scroll-hint">
-    <span>Explore</span>
-    <div class="scroll-line"></div>
-  </div>
-</section>
-
-<!-- PRODUCT REVEAL -->
-<section id="product-reveal">
-  <div class="product-stage">
-    <div class="ring-orbit"><div class="orbit-dot"></div></div>
-    <div class="ring-orbit"><div class="orbit-dot"></div></div>
-    <div class="ring-orbit"><div class="orbit-dot"></div></div>
-    <div class="product-orb">
-      <div class="orb-inner">
-        <div class="orb-scan"></div>
-        <div class="plant-emoji">🌱</div>
-        <div class="hive-label">
-          <small>Colgate</small>
-          Hive
-        </div>
-        <div class="status-dots">
-          <div class="sdot"></div>
-          <div class="sdot"></div>
-          <div class="sdot"></div>
-        </div>
+    <!-- HERO -->
+    <section id="hero">
+      <canvas id="canvas-bg"></canvas>
+      <p class="hero-eyebrow">Introducing Colgate Hive</p>
+      <h1 class="hero-headline">Your Snack<em>is Alive.</em></h1>
+      <p class="hero-sub">
+        The world's first portable hydroponic snack ecosystem. Carry fresh
+        strawberries, herbs, and greens — grown by AI, powered by the sun.
+      </p>
+      <div class="hero-actions">
+        <button class="btn-primary" id="hero-preorder-btn">
+          Pre-order Now
+        </button>
+        <button class="btn-ghost" id="hero-learn-btn">See How It Works</button>
       </div>
-    </div>
-    <div class="product-caption">
-      <div class="caption-item" id="cap1">
-        <div class="caption-dot"></div>
-        <div class="caption-text"><strong>Solar Panel</strong>Trickle-charges all day</div>
+      <div class="scroll-hint">
+        <div class="scroll-line"></div>
       </div>
-      <div class="caption-item" id="cap2">
-        <div class="caption-dot"></div>
-        <div class="caption-text"><strong>AI Brain</strong>Monitors 12 growth factors</div>
-      </div>
-      <div class="caption-item" id="cap3">
-        <div class="caption-dot"></div>
-        <div class="caption-text"><strong>Hydro Chamber</strong>Zero soil, zero mess</div>
-      </div>
-      <div class="caption-item" id="cap4">
-        <div class="caption-dot"></div>
-        <div class="caption-text"><strong>LED Spectrum</strong>Tuned for each crop</div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- STATS -->
-<section id="stats">
-  <div class="stat-item reveal">
-    <div class="stat-number" data-target="90">0</div>
-    <div class="stat-label">% Less plastic waste</div>
-  </div>
-  <div class="stat-item reveal reveal-delay-1">
-    <div class="stat-number" data-target="12">0</div>
-    <div class="stat-label">AI sensors onboard</div>
-  </div>
-  <div class="stat-item reveal reveal-delay-2">
-    <div class="stat-number" data-target="7">0</div>
-    <div class="stat-label">Days to first harvest</div>
-  </div>
-  <div class="stat-item reveal reveal-delay-3">
-    <div class="stat-number" data-target="100">0</div>
-    <div class="stat-label">% Solar powered</div>
-  </div>
-</section>
-
-<!-- FEATURES -->
-<section id="features">
-  <p class="section-eyebrow reveal">Built different</p>
-  <h2 class="section-headline reveal">Technology that<br>thinks, grows, feeds.</h2>
-  <div class="features-grid">
-    <div class="feature-card reveal">
-      <div class="feature-icon">☀️</div>
-      <h3 class="feature-title">Solar Harvest Energy</h3>
-      <p class="feature-desc">Integrated photovoltaic cells convert ambient and direct light into clean energy — enough to run the entire ecosystem on just a few hours of sunlight.</p>
-    </div>
-    <div class="feature-card reveal reveal-delay-1">
-      <div class="feature-icon">🧠</div>
-      <h3 class="feature-title">AI Growth Engine</h3>
-      <p class="feature-desc">Twelve embedded sensors feed real-time data to an onboard neural model that autonomously adjusts lighting spectrum, nutrient dosing, and humidity cycles.</p>
-    </div>
-    <div class="feature-card reveal reveal-delay-2">
-      <div class="feature-icon">💧</div>
-      <h3 class="feature-title">Closed-Loop Hydroponics</h3>
-      <p class="feature-desc">A recirculating water system uses up to 95% less water than conventional soil farming. No dirt. No mess. Just thriving roots and clean produce.</p>
-    </div>
-    <div class="feature-card reveal reveal-delay-1">
-      <div class="feature-icon">📱</div>
-      <h3 class="feature-title">Companion App</h3>
-      <p class="feature-desc">Monitor crop health, get harvest notifications, and swap grow profiles — all from your phone. The app speaks plant so you don't have to.</p>
-    </div>
-    <div class="feature-card reveal reveal-delay-2">
-      <div class="feature-icon">🌡️</div>
-      <h3 class="feature-title">Climate Control</h3>
-      <p class="feature-desc">Micro-climate regulation maintains the precise temperature band each plant species needs, whether you're in a Kochi summer or a Helsinki winter.</p>
-    </div>
-    <div class="feature-card reveal reveal-delay-3">
-      <div class="feature-icon">♻️</div>
-      <h3 class="feature-title">Zero Packaging</h3>
-      <p class="feature-desc">The bag is the product. Every snack you harvest replaces a single-use plastic wrapper. Over a year, that's hundreds of packets kept out of landfills.</p>
-    </div>
-  </div>
-</section>
-
-<!-- HOW IT WORKS -->
-<section id="how-wrapper">
-  <div id="how">
-    <p class="section-eyebrow reveal">Process</p>
-    <h2 class="section-headline reveal">From pocket to<br>plate in days.</h2>
-    <div class="steps">
-      <div class="steps-list">
-        <div class="step">
-          <div class="step-num">1</div>
-          <div class="step-content">
-            <div class="step-title">Choose your crop</div>
-            <div class="step-text">Open the app, browse 20+ supported varieties — from strawberries and basil to cherry tomatoes — and select your grow profile. Hive downloads the exact protocol.</div>
+    <!-- PRODUCT REVEAL -->
+    <section id="product-reveal">
+      <div class="product-stage">
+        <div class="ring-orbit"><div class="orbit-dot"></div></div>
+        <div class="ring-orbit"><div class="orbit-dot"></div></div>
+        <div class="ring-orbit"><div class="orbit-dot"></div></div>
+        <div class="product-orb">
+          <div class="orb-inner">
+            <div class="orb-scan"></div>
+            <div class="plant-emoji">🌱</div>
+            <div class="hive-label">
+              <small>Colgate</small>
+              Hive
+            </div>
+            <div class="status-dots">
+              <div class="sdot"></div>
+              <div class="sdot"></div>
+              <div class="sdot"></div>
+            </div>
           </div>
         </div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <div class="step-content">
-            <div class="step-title">Drop in the seed pod</div>
-            <div class="step-text">Biodegradable seed capsules slot into the hydroponic chamber in seconds. Top up the water reservoir, close the lid, and you're done.</div>
+        <div class="product-caption">
+          <div class="caption-item" id="cap1">
+            <div class="caption-dot"></div>
+            <div class="caption-text">
+              <strong>Solar Panel</strong>Trickle-charges all day
+            </div>
           </div>
-        </div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <div class="step-content">
-            <div class="step-title">Carry it. Let it grow.</div>
-            <div class="step-text">The AI monitors everything automatically. Solar panels top up battery as you move through your day. You just carry it like a bag.</div>
+          <div class="caption-item" id="cap2">
+            <div class="caption-dot"></div>
+            <div class="caption-text">
+              <strong>AI Brain</strong>Monitors 12 growth factors
+            </div>
           </div>
-        </div>
-        <div class="step">
-          <div class="step-num">4</div>
-          <div class="step-content">
-            <div class="step-title">Harvest and eat</div>
-            <div class="step-text">Your phone notifies you when it's time. Open the chamber, pluck your snack fresh, and replant instantly. The cycle is 7–21 days depending on the crop.</div>
+          <div class="caption-item" id="cap3">
+            <div class="caption-dot"></div>
+            <div class="caption-text">
+              <strong>Hydro Chamber</strong>Zero soil, zero mess
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="steps-visual reveal">
-        <div class="app-mockup">
-          <div class="app-bar">
-            <span class="app-time">9:41</span>
-            <div class="app-status"><span></span><span></span><span></span></div>
-          </div>
-          <div class="app-title">Hive</div>
-          <div class="app-sub">Active ecosystem</div>
-          <div class="app-gauge">
-            <div class="gauge-label">Humidity <span>74%</span></div>
-            <div class="gauge-bar"><div class="gauge-fill" style="width:74%"></div></div>
-          </div>
-          <div class="app-gauge">
-            <div class="gauge-label">Light <span>92%</span></div>
-            <div class="gauge-bar"><div class="gauge-fill" style="width:92%"></div></div>
-          </div>
-          <div class="app-gauge">
-            <div class="gauge-label">Nutrients <span>61%</span></div>
-            <div class="gauge-bar"><div class="gauge-fill" style="width:61%"></div></div>
-          </div>
-          <div class="app-gauge">
-            <div class="gauge-label">Water <span>88%</span></div>
-            <div class="gauge-bar"><div class="gauge-fill" style="width:88%"></div></div>
-          </div>
-          <div class="app-harvest">
-            <div class="harvest-icon">🍓</div>
-            <div class="harvest-text">
-              <strong>Harvest ready in 2 days</strong>
-              Strawberry · Pod A
+          <div class="caption-item" id="cap4">
+            <div class="caption-dot"></div>
+            <div class="caption-text">
+              <strong>LED Spectrum</strong>Tuned for each crop
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- CROPS -->
-<section id="crops">
-  <p class="section-eyebrow reveal">What you can grow</p>
-  <h2 class="section-headline crops-headline reveal">20+ varieties.<br>All from your bag.</h2>
-  <div class="crops-grid">
-    <div class="crop-card reveal"><span class="crop-emoji">🍓</span><div class="crop-name">Strawberries</div><div class="crop-info">Sweet, compact, and perfect for portable growing.</div><div class="crop-days">Ready in 14 days</div></div>
-    <div class="crop-card reveal reveal-delay-1"><span class="crop-emoji">🌿</span><div class="crop-name">Fresh Basil</div><div class="crop-info">Aromatic herbs at peak freshness, always on hand.</div><div class="crop-days">Ready in 7 days</div></div>
-    <div class="crop-card reveal reveal-delay-2"><span class="crop-emoji">🥬</span><div class="crop-name">Leafy Greens</div><div class="crop-info">Baby spinach, arugula, and lettuce in a compact pod.</div><div class="crop-days">Ready in 10 days</div></div>
-    <div class="crop-card reveal reveal-delay-3"><span class="crop-emoji">🍅</span><div class="crop-name">Cherry Tomatoes</div><div class="crop-info">Sun gold variety optimized for hydroponic growth.</div><div class="crop-days">Ready in 21 days</div></div>
-    <div class="crop-card reveal"><span class="crop-emoji">🌱</span><div class="crop-name">Microgreens</div><div class="crop-info">Nutrient-dense sprouts harvested at peak potency.</div><div class="crop-days">Ready in 5 days</div></div>
-    <div class="crop-card reveal reveal-delay-1"><span class="crop-emoji">🫐</span><div class="crop-name">Blueberries</div><div class="crop-info">Compact dwarf variety adapted for Hive chambers.</div><div class="crop-days">Ready in 18 days</div></div>
-    <div class="crop-card reveal reveal-delay-2"><span class="crop-emoji">🌶️</span><div class="crop-name">Chilli Peppers</div><div class="crop-info">Compact hot varieties from mild to fiery.</div><div class="crop-days">Ready in 21 days</div></div>
-    <div class="crop-card reveal reveal-delay-3"><span class="crop-emoji">🧄</span><div class="crop-name">Garlic Chives</div><div class="crop-info">Regrows continuously — one pod, infinite harvests.</div><div class="crop-days">Ready in 8 days</div></div>
-  </div>
-</section>
-
-<!-- SUSTAINABILITY -->
-<section id="sustain">
-  <div class="sustain-inner">
+    <!-- STATS -->
+    <section id="stats">
+      <div class="stat-item reveal">
+        <div class="stat-number" data-target="90">0</div>
+        <div class="stat-label">% Less plastic waste</div>
+      </div>
+      <div class="stat-item reveal reveal-delay-1">
+        <div class="stat-number" data-target="12">0</div>
+        <div class="stat-label">AI sensors onboard</div>
+      </div>
+      <div class="stat-item reveal reveal-delay-2">
+        <div class="stat-number" data-target="7">0</div>
+        <div class="stat-label">Days to first harvest</div>
+      </div>
+      <div class="stat-item reveal reveal-delay-3">
+        <div class="stat-number" data-target="100">0</div>
+        <div class="stat-label">% Solar powered</div>
+      </div>
+    </section>
     <div>
-      <p class="section-eyebrow reveal">Planet first</p>
-      <h2 class="section-headline reveal">Every snack saves<br>something.</h2>
-      <div class="sustain-impact">
-        <div class="impact-row reveal">
-          <div class="impact-icon">🗑️</div>
-          <div><div class="impact-stat">340</div><div class="impact-detail">plastic snack wrappers avoided per user, per year</div></div>
+      <img
+        src="colgate_hive_product (1).png"
+        alt="product demo"
+        id="imgproduct"
+      />
+    </div>
+
+    <!-- FEATURES -->
+    <section id="features">
+      <p class="section-eyebrow reveal">Built different</p>
+      <h2 class="section-headline reveal">
+        Technology that<br />thinks, grows, feeds.
+      </h2>
+      <div class="features-grid">
+        <div class="feature-card reveal">
+          <div class="feature-icon">☀️</div>
+          <h3 class="feature-title">Solar Harvest Energy</h3>
+          <p class="feature-desc">
+            Integrated photovoltaic cells convert ambient and direct light into
+            clean energy — enough to run the entire ecosystem on just a few
+            hours of sunlight.
+          </p>
         </div>
-        <div class="impact-row reveal reveal-delay-1">
-          <div class="impact-icon">💧</div>
-          <div><div class="impact-stat">95%</div><div class="impact-detail">less water used versus conventional crop farming</div></div>
+        <div class="feature-card reveal reveal-delay-1">
+          <div class="feature-icon">🧠</div>
+          <h3 class="feature-title">AI Growth Engine</h3>
+          <p class="feature-desc">
+            Twelve embedded sensors feed real-time data to an onboard neural
+            model that autonomously adjusts lighting spectrum, nutrient dosing,
+            and humidity cycles.
+          </p>
         </div>
-        <div class="impact-row reveal reveal-delay-2">
-          <div class="impact-icon">☀️</div>
-          <div><div class="impact-stat">0g</div><div class="impact-detail">carbon emissions — fully renewable solar operation</div></div>
+        <div class="feature-card reveal reveal-delay-2">
+          <div class="feature-icon">💧</div>
+          <h3 class="feature-title">Closed-Loop Hydroponics</h3>
+          <p class="feature-desc">
+            A recirculating water system uses up to 95% less water than
+            conventional soil farming. No dirt. No mess. Just thriving roots and
+            clean produce.
+          </p>
+        </div>
+        <div class="feature-card reveal reveal-delay-1">
+          <div class="feature-icon">📱</div>
+          <h3 class="feature-title">Companion App</h3>
+          <p class="feature-desc">
+            Monitor crop health, get harvest notifications, and swap grow
+            profiles — all from your phone. The app speaks plant so you don't
+            have to.
+          </p>
+        </div>
+        <div class="feature-card reveal reveal-delay-2">
+          <div class="feature-icon">🌡️</div>
+          <h3 class="feature-title">Climate Control</h3>
+          <p class="feature-desc">
+            Micro-climate regulation maintains the precise temperature band each
+            plant species needs, whether you're in a Kochi summer or a Helsinki
+            winter.
+          </p>
+        </div>
+        <div class="feature-card reveal reveal-delay-3">
+          <div class="feature-icon">♻️</div>
+          <h3 class="feature-title">Zero Packaging</h3>
+          <p class="feature-desc">
+            The bag is the product. Every snack you harvest replaces a
+            single-use plastic wrapper. Over a year, that's hundreds of packets
+            kept out of landfills.
+          </p>
         </div>
       </div>
-    </div>
-    <div class="sustain-visual reveal">
-      <div class="earth-ring">
-        <div class="earth-orbit"><div class="e-dot a"></div></div>
-        <div class="earth-orbit"><div class="e-dot b"></div></div>
-        <div class="earth-core">🌍</div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how-wrapper">
+      <div id="how">
+        <p class="section-eyebrow reveal">Process</p>
+        <h2 class="section-headline reveal">
+          From pocket to<br />plate in days.
+        </h2>
+        <div class="steps">
+          <div class="steps-list">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-content">
+                <div class="step-title">Choose your crop</div>
+                <div class="step-text">
+                  Open the app, browse 20+ supported varieties — from
+                  strawberries and basil to cherry tomatoes — and select your
+                  grow profile. Hive downloads the exact protocol.
+                </div>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-content">
+                <div class="step-title">Drop in the seed pod</div>
+                <div class="step-text">
+                  Biodegradable seed capsules slot into the hydroponic chamber
+                  in seconds. Top up the water reservoir, close the lid, and
+                  you're done.
+                </div>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-content">
+                <div class="step-title">Carry it. Let it grow.</div>
+                <div class="step-text">
+                  The AI monitors everything automatically. Solar panels top up
+                  battery as you move through your day. You just carry it like a
+                  bag.
+                </div>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">4</div>
+              <div class="step-content">
+                <div class="step-title">Harvest and eat</div>
+                <div class="step-text">
+                  Your phone notifies you when it's time. Open the chamber,
+                  pluck your snack fresh, and replant instantly. The cycle is
+                  7–21 days depending on the crop.
+                </div>
+              </div>
+            </div>
+          </div>
+          <br />
+          <br />
+          <br />
+          <div class="steps-visual reveal">
+            <div class="app-mockup">
+              <div class="app-bar">
+                <span class="app-time">9:41</span>
+                <div class="app-status">
+                  <span></span><span></span><span></span>
+                </div>
+              </div>
+              <div class="app-title">Hive</div>
+              <div class="app-sub">Active ecosystem</div>
+              <div class="app-gauge">
+                <div class="gauge-label">Humidity <span>74%</span></div>
+                <div class="gauge-bar">
+                  <div class="gauge-fill" style="width: 74%"></div>
+                </div>
+              </div>
+              <div class="app-gauge">
+                <div class="gauge-label">Light <span>92%</span></div>
+                <div class="gauge-bar">
+                  <div class="gauge-fill" style="width: 92%"></div>
+                </div>
+              </div>
+              <div class="app-gauge">
+                <div class="gauge-label">Nutrients <span>61%</span></div>
+                <div class="gauge-bar">
+                  <div class="gauge-fill" style="width: 61%"></div>
+                </div>
+              </div>
+              <div class="app-gauge">
+                <div class="gauge-label">Water <span>88%</span></div>
+                <div class="gauge-bar">
+                  <div class="gauge-fill" style="width: 88%"></div>
+                </div>
+              </div>
+              <div class="app-harvest">
+                <div class="harvest-icon">🍓</div>
+                <div class="harvest-text">
+                  <strong>Harvest ready in 2 days</strong>
+                  Strawberry · Pod A
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- CTA -->
-<section id="cta">
-  <p class="cta-eyebrow reveal">Get yours early</p>
-  <h2 class="cta-headline reveal">The future of<br>snacking is <em>alive.</em></h2>
-  <p class="cta-sub reveal">Join thousands of early adopters who are turning their daily commute into a living farm. Pre-orders open now.</p>
-  <div class="cta-actions reveal">
-    <button class="btn-primary btn-large">Pre-order — $149</button>
-    <button class="btn-ghost btn-large">Download App</button>
-  </div>
-</section>
+    <!-- CROPS -->
+    <section id="crops">
+      <p class="section-eyebrow reveal">What you can grow</p>
+      <h2 class="section-headline crops-headline reveal">
+        20+ varieties.<br />All from your bag.
+      </h2>
+      <div class="crops-grid">
+        <div class="crop-card reveal">
+          <span class="crop-emoji">🍓</span>
+          <div class="crop-name">Strawberries</div>
+          <div class="crop-info">
+            Sweet, compact, and perfect for portable growing.
+          </div>
+          <div class="crop-days">Ready in 14 days</div>
+        </div>
+        <div class="crop-card reveal reveal-delay-1">
+          <span class="crop-emoji">🌿</span>
+          <div class="crop-name">Fresh Basil</div>
+          <div class="crop-info">
+            Aromatic herbs at peak freshness, always on hand.
+          </div>
+          <div class="crop-days">Ready in 7 days</div>
+        </div>
+        <div class="crop-card reveal reveal-delay-2">
+          <span class="crop-emoji">🥬</span>
+          <div class="crop-name">Leafy Greens</div>
+          <div class="crop-info">
+            Baby spinach, arugula, and lettuce in a compact pod.
+          </div>
+          <div class="crop-days">Ready in 10 days</div>
+        </div>
+        <div class="crop-card reveal reveal-delay-3">
+          <span class="crop-emoji">🍅</span>
+          <div class="crop-name">Cherry Tomatoes</div>
+          <div class="crop-info">
+            Sun gold variety optimized for hydroponic growth.
+          </div>
+          <div class="crop-days">Ready in 21 days</div>
+        </div>
+        <div class="crop-card reveal">
+          <span class="crop-emoji">🌱</span>
+          <div class="crop-name">Microgreens</div>
+          <div class="crop-info">
+            Nutrient-dense sprouts harvested at peak potency.
+          </div>
+          <div class="crop-days">Ready in 5 days</div>
+        </div>
+        <div class="crop-card reveal reveal-delay-1">
+          <span class="crop-emoji">🫐</span>
+          <div class="crop-name">Blueberries</div>
+          <div class="crop-info">
+            Compact dwarf variety adapted for Hive chambers.
+          </div>
+          <div class="crop-days">Ready in 18 days</div>
+        </div>
+        <div class="crop-card reveal reveal-delay-2">
+          <span class="crop-emoji">🌶️</span>
+          <div class="crop-name">Chilli Peppers</div>
+          <div class="crop-info">Compact hot varieties from mild to fiery.</div>
+          <div class="crop-days">Ready in 21 days</div>
+        </div>
+        <div class="crop-card reveal reveal-delay-3">
+          <span class="crop-emoji">🧄</span>
+          <div class="crop-name">Garlic Chives</div>
+          <div class="crop-info">
+            Regrows continuously — one pod, infinite harvests.
+          </div>
+          <div class="crop-days">Ready in 8 days</div>
+        </div>
+      </div>
+    </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-logo">Colgate <span>Hive</span></div>
-  <ul class="footer-links">
-    <li><a href="#">Privacy</a></li>
-    <li><a href="#">Terms</a></li>
-    <li><a href="#">Press</a></li>
-    <li><a href="#">Contact</a></li>
-  </ul>
-  <p class="footer-copy">© 2025 Colgate Hive. Your snack is alive.</p>
-</footer>
+    <!-- SUSTAINABILITY -->
+    <section id="sustain">
+      <div class="sustain-inner">
+        <div>
+          <p class="section-eyebrow reveal">Planet first</p>
+          <h2 class="section-headline reveal">
+            Every snack saves<br />something.
+          </h2>
+          <div class="sustain-impact">
+            <div class="impact-row reveal">
+              <div class="impact-icon">🗑️</div>
+              <div>
+                <div class="impact-stat">340</div>
+                <div class="impact-detail">
+                  plastic snack wrappers avoided per user, per year
+                </div>
+              </div>
+            </div>
+            <div class="impact-row reveal reveal-delay-1">
+              <div class="impact-icon">💧</div>
+              <div>
+                <div class="impact-stat">95%</div>
+                <div class="impact-detail">
+                  less water used versus conventional crop farming
+                </div>
+              </div>
+            </div>
+            <div class="impact-row reveal reveal-delay-2">
+              <div class="impact-icon">☀️</div>
+              <div>
+                <div class="impact-stat">0g</div>
+                <div class="impact-detail">
+                  carbon emissions — fully renewable solar operation
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sustain-visual reveal">
+          <div class="earth-ring">
+            <div class="earth-orbit"><div class="e-dot a"></div></div>
+            <div class="earth-orbit"><div class="e-dot b"></div></div>
+            <div class="earth-core">🌍</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<script src="main.js"></script>
-</body>
+    <!-- CTA -->
+    <section id="cta">
+      <p class="cta-eyebrow reveal">Get yours early</p>
+      <h2 class="cta-headline reveal">
+        The future of<br />snacking is <em>alive.</em>
+      </h2>
+      <p class="cta-sub reveal">
+        Join thousands of early adopters who are turning their daily commute
+        into a living farm. Pre-orders open now.
+      </p>
+      <div class="cta-actions reveal">
+        <button class="btn-primary btn-large">Pre-order — $149</button>
+        <button class="btn-ghost btn-large">Download App</button>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-logo">Colgate <span>Hive</span></div>
+      <ul class="footer-links">
+        <li><a href="#">Privacy</a></li>
+        <li><a href="#">Terms</a></li>
+        <li><a href="#">Press</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <p class="footer-copy">© 2025 Colgate Hive. Your snack is alive.</p>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
 </html>
