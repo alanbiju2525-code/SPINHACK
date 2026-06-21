@@ -377,3 +377,74 @@
     }
   });
 })();
+/* ============================================================
+   11. SCROLL PROGRESS BAR
+   ============================================================ */
+
+(function initScrollProgress() {
+  const progress = document.getElementById("scroll-progress");
+
+  if (!progress) return;
+
+  window.addEventListener("scroll", () => {
+    const scrollTop = window.scrollY;
+
+    const pageHeight =
+      document.documentElement.scrollHeight - window.innerHeight;
+
+    const percentage = (scrollTop / pageHeight) * 100;
+
+    progress.style.width = percentage + "%";
+  });
+})();
+/* ============================================================
+   FLOATING SVG LEAVES
+============================================================ */
+
+(function () {
+  const container = document.getElementById("leaf-container");
+
+  if (!container) return;
+
+  const svg = `
+<svg xmlns="http://www.w3.org/2000/svg"
+viewBox="0 0 64 64">
+
+<path
+fill="#4AFF6B"
+d="M54 8
+C34 8 16 24 12 42
+c-2 10 4 14 10 10
+18-4 34-22 32-42z"/>
+
+<path
+fill="#9CFFB1"
+opacity=".55"
+d="M20 46
+C28 34 40 22 52 12"/>
+
+</svg>
+`;
+
+  function createLeaf() {
+    const leaf = document.createElement("div");
+
+    leaf.className = "leaf";
+
+    leaf.innerHTML = svg;
+
+    leaf.style.left = Math.random() * 100 + "vw";
+
+    leaf.style.animationDuration = 8 + Math.random() * 6 + "s";
+
+    leaf.style.transform = `scale(${0.5 + Math.random() * 0.9})`;
+
+    container.appendChild(leaf);
+
+    setTimeout(() => {
+      leaf.remove();
+    }, 14000);
+  }
+
+  setInterval(createLeaf, 2200);
+})();
