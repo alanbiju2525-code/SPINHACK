@@ -448,3 +448,45 @@ C28 34 40 22 52 12"/>
 
   setInterval(createLeaf, 2200);
 })();
+/* ==========================
+   LOADER
+========================== */
+
+window.addEventListener("load", () => {
+  const loader = document.getElementById("loader");
+
+  const fill = document.querySelector(".progress-fill");
+
+  const message = document.getElementById("loader-message");
+
+  const messages = [
+    "Booting AI...",
+    "Charging Solar Cells...",
+    "Growing Fresh Ideas...",
+    "Cultivating Tomorrow",
+  ];
+
+  let progress = 0;
+
+  const timer = setInterval(() => {
+    progress++;
+
+    fill.style.width = progress + "%";
+
+    if (progress == 20) message.textContent = messages[0];
+
+    if (progress == 45) message.textContent = messages[1];
+
+    if (progress == 70) message.textContent = messages[2];
+
+    if (progress == 90) message.textContent = messages[3];
+
+    if (progress >= 100) {
+      clearInterval(timer);
+
+      setTimeout(() => {
+        loader.classList.add("hide");
+      }, 300);
+    }
+  }, 16);
+});

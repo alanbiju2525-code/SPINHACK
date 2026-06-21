@@ -1537,3 +1537,173 @@ footer {
     opacity: 0;
   }
 }
+/* ============================================================
+   LOADER
+============================================================ */
+
+#loader {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: radial-gradient(
+    circle at center,
+    #0d2c18 0%,
+    #05140c 45%,
+    #010705 100%
+  );
+
+  z-index: 999999;
+
+  overflow: hidden;
+
+  transition:
+    opacity 0.8s ease,
+    visibility 0.8s ease;
+}
+
+#loader.hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+#loader::before {
+  content: "";
+
+  position: absolute;
+
+  width: 900px;
+  height: 900px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(74, 255, 107, 0.12),
+    transparent 70%
+  );
+
+  filter: blur(100px);
+
+  animation: pulseGlow 5s ease-in-out infinite;
+}
+
+.loader-content {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  width: 100%;
+
+  transform: translateY(-40px);
+}
+
+.loader-logo {
+  font-size: 54px;
+
+  margin-bottom: 20px;
+
+  filter: drop-shadow(0 0 18px rgba(74, 255, 107, 0.7));
+
+  animation: floatLogo 3s ease-in-out infinite;
+}
+
+.loader-content h1 {
+  margin: 0;
+
+  font-family: Inter, sans-serif;
+
+  font-size: clamp(54px, 6vw, 82px);
+
+  font-weight: 800;
+
+  letter-spacing: -3px;
+
+  color: #f4f4f4;
+
+  text-transform: uppercase;
+}
+
+.loader-content h1 span {
+  color: #4aff6b;
+}
+
+#loader-message {
+  margin-top: 18px;
+
+  color: #98a69d;
+
+  font-size: 15px;
+
+  letter-spacing: 5px;
+
+  text-transform: uppercase;
+}
+
+.progress {
+  width: 360px;
+
+  max-width: 80vw;
+
+  height: 4px;
+
+  margin-top: 42px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  border-radius: 999px;
+
+  overflow: hidden;
+}
+
+.progress-fill {
+  width: 0%;
+
+  height: 100%;
+
+  border-radius: 999px;
+
+  background: linear-gradient(90deg, #33ff66, #4aff6b, #8bffaa);
+
+  box-shadow:
+    0 0 12px rgba(74, 255, 107, 0.8),
+    0 0 35px rgba(74, 255, 107, 0.45);
+}
+
+@keyframes floatLogo {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes pulseGlow {
+  0%,
+  100% {
+    transform: scale(1);
+
+    opacity: 0.45;
+  }
+
+  50% {
+    transform: scale(1.08);
+
+    opacity: 0.75;
+  }
+}
